@@ -20,7 +20,7 @@ You take the server offline temporarily so that the machine can recover and retu
 
 # Goal:
 - Identify the cause of the attack resulting in the network interruption
-- Explain how the attack is causing the website malfunction
+- Explain how the attack is causing the website to malfunction
 
 # Response:
 
@@ -30,12 +30,6 @@ You take the server offline temporarily so that the machine can recover and retu
 
 | Explain how the attack is causing the website to malfunction |
 | ------------------------------------------------------------ |
-| Normally when website visitors try to establish a connection with the web server, a three-way handshake occurs using the TCP protocol. The handshake consists of three steps:
-1. First, the source sends a SYN (or synchronize) packet to the destinationto request to establish a connection
-2. Then, the destination responds a SYN/ACK packet to accept the initial request and, the destination will reserve resources for the source to connect
-3. Finally, the source responds with a ACK (or acknowledgment) packet to let the server now it got the permission to connect
-For a SYN flood attack, a threat actor will send a large amount of SYN packets all at once. This takes ups all of the servers available resources it reserves for other connections. Then, the server can no longer accept legitimate TCP connection requests.
-At first the log shows the server works by proccesing the requests from the threat actor and legitimate users. However, once the server is flooded with mailicios SYN packets it quickly overloads and is unable to open any new connections. Eventually leaving only the threat actor’s SYN packets in the log and other users receive a connection timeout message.
-|
+| Normally when website visitors try to establish a connection with the web server, a three-way handshake occurs using the TCP protocol. The handshake consists of three steps: 1. First, the source sends a SYN (or synchronize) packet to the destination, requesting to establish a connection. 2. Then, the destination responds with a SYN/ACK packet to accept the initial request and the destination will now reserve resources for the source to connect. 3. Finally, the source responds with an ACK (or acknowledgment) packet to let the server know it got the permission to connect. For a SYN flood attack, a threat actor will send a large amount of SYN packets all at once. This takes up all of the server's available resources it reserves for other connections. Then, the server can no longer accept legitimate TCP connection requests. At first, the log shows the server works by processing the requests from the threat actor and legitimate users. However, once the server is flooded with malicious SYN packets it quickly overloads and is unable to open any new connections. Eventually leaving only the threat actor’s SYN packets in the log and other users receive a connection timeout message.|
 
 
