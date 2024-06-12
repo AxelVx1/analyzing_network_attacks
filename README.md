@@ -12,6 +12,7 @@ You use a packet sniffer to capture data packets in transit to and from the web 
 You take the server offline temporarily so that the machine can recover and return to a normal operating status. You also configure the company’s firewall to block the IP address that was sending the abnormal number of SYN requests. You know that your IP blocking solution won’t last long, as an attacker can spoof other IP addresses to get around this block. You need to alert your manager about this problem quickly and discuss the next steps to stop this attacker and prevent this problem from happening again. You will need to be prepared to tell your boss about the type of attack you discovered and how it was affecting the web server and employees.
 
 **Wireshark TCP/HTTP Log:**
+
 <img src="https://github.com/AxelVx1/analyzing_network_attacks/blob/main/Log1.png?raw=true" alt="App Screenshot" width="600">
 <img src="https://github.com/AxelVx1/analyzing_network_attacks/blob/main/Log2.png?raw=true" alt="App Screenshot" width="600">
 <img src="https://github.com/AxelVx1/analyzing_network_attacks/blob/main/Log3.png?raw=true" alt="App Screenshot" width="600">
@@ -30,13 +31,9 @@ You take the server offline temporarily so that the machine can recover and retu
 | Explain how the attack is causing the website to malfunction |
 | ------------------------------------------------------------ |
 | Normally when website visitors try to establish a connection with the web server, a three-way handshake occurs using the TCP protocol. The handshake consists of three steps:
-
 1. First, the source sends a SYN (or synchronize) packet to the destinationto request to establish a connection
-
 2. Then, the destination responds a SYN/ACK packet to accept the initial request and, the destination will reserve resources for the source to connect
-
 3. Finally, the source responds with a ACK (or acknowledgment) packet to let the server now it got the permission to connect
-
 For a SYN flood attack, a threat actor will send a large amount of SYN packets all at once. This takes ups all of the servers available resources it reserves for other connections. Then, the server can no longer accept legitimate TCP connection requests.
 At first the log shows the server works by proccesing the requests from the threat actor and legitimate users. However, once the server is flooded with mailicios SYN packets it quickly overloads and is unable to open any new connections. Eventually leaving only the threat actor’s SYN packets in the log and other users receive a connection timeout message. |
 
