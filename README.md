@@ -35,6 +35,7 @@ You take the server offline temporarily so that the machine can recover and retu
 2. Then, the destination responds a SYN/ACK packet to accept the initial request and, the destination will reserve resources for the source to connect
 3. Finally, the source responds with a ACK (or acknowledgment) packet to let the server now it got the permission to connect
 For a SYN flood attack, a threat actor will send a large amount of SYN packets all at once. This takes ups all of the servers available resources it reserves for other connections. Then, the server can no longer accept legitimate TCP connection requests.
-At first the log shows the server works by proccesing the requests from the threat actor and legitimate users. However, once the server is flooded with mailicios SYN packets it quickly overloads and is unable to open any new connections. Eventually leaving only the threat actor’s SYN packets in the log and other users receive a connection timeout message. |
+At first the log shows the server works by proccesing the requests from the threat actor and legitimate users. However, once the server is flooded with mailicios SYN packets it quickly overloads and is unable to open any new connections. Eventually leaving only the threat actor’s SYN packets in the log and other users receive a connection timeout message.
+|
 
 
